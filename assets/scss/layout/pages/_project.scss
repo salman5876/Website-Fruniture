@@ -1,0 +1,317 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.19 protect css
+/*----------------------------------------*/
+.#{$theme-prifix}-project{
+  &-title{
+    &-wrapper{
+      margin-right: 260px;
+      padding-bottom: 220px;
+    }
+    &-sm{
+      font-size: 24px;
+      line-height: 1.42;
+      position: relative;
+      z-index: 2;
+      & a{
+        @include bgborder(#FF824D, 0,0);
+        @include transition(all .3s ease);
+        &:hover{
+            @include bgborder(#FF824D, 0,100%);
+            color: var(--tp-theme-primary);
+            @include transition(all .3s ease);
+        }
+      }
+      @media #{$xs} {
+        font-size: 22px;
+      }
+    }
+  }
+  &-meta{
+    & h5{
+      font-size: 14px;
+      line-height: 1.71;
+      text-decoration: underline;
+      color: #323232;
+    }
+  }
+  &-icon{
+    padding-left: 450px;
+    position: relative;
+    transform:translateY(-24px);
+    @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+      padding-left: 0;
+      float: right;
+    }
+    @media #{$xs} {
+      padding-top: 12px;
+    }
+    &::before{
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 450px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: #cecac4;
+      @media #{$lg} {
+        left: inherit;
+        right: 59px;
+        width: 648%;
+      }
+      @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+        display: none;
+      }
+    }
+    & a{
+      border: 1px solid #cecac4;
+      width: 60px;
+      height: 60px;
+      display: block;
+      border-radius: 50%;
+      text-align: center;
+      color: $black;
+      transition: all .4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & .tp-arrow-angle svg{
+        width: 13px;
+        height: 13px;
+      }
+      &:hover{
+        background-color: var(--tp-theme-primary);
+        color: var(--tp-common-white);
+        border-color: var(--tp-theme-primary);
+      }
+    }
+  }
+  &-content{
+    & span{
+      line-height: 1.56;
+      transform: translateY(-44px);
+      display: inline-block;  
+      @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+        transform: inherit;
+        margin-top: 18px;
+      }
+      @media #{$md,$sm,$xs} {
+        margin-top: 5px;
+      }
+    }
+    &-2{
+      padding-left: 370px;
+      padding-top: 40px;
+    }
+  }
+  &-col{
+    &-trans{
+      transform: translateY(-350px);
+    }
+  }
+  &-para{
+    &-4{
+      @media #{$xl,$lg,$md,$sm,$xs} {
+        padding-right: 0;
+      }
+      & p{
+        color: #94969f;
+      }
+    }
+  }
+  &-list{
+    & ul{
+      margin-left: 188px;
+      @media #{$xl,$lg,$md,$sm,$xs} {
+        margin-left: 0;
+      }
+      & li{
+        list-style: none;
+        & span{
+          font-weight: 600;
+          font-size: 18px;
+          text-transform: capitalize;
+          color: var(--tp-common-white);
+          padding: 9px 16px;
+          border: 1px solid #404248;
+          display: inline-block;
+          border-radius: 30px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  &-slider{
+    @media #{$sm,$xs} {
+      padding: 0;
+      padding-bottom: 60px;
+    }
+    &-text{
+      & .tp-hero-text-slider-single {
+        width: 100%;
+        & h2{
+          font-size: 120px;
+          line-height: 1;
+          text-transform: uppercase;
+          color: #2b2c2f;
+          @media #{$md,$sm,$xs} {
+            font-size: 80px;
+          }
+        }
+      }
+    }
+  }
+  &-list-thumb{
+    &-wrap{
+      height: 100%;
+      width: 100%;
+      @media #{$md,$sm,$xs} {
+        height: 300px;
+      }
+    }
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5,
+    &-6{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        visibility: hidden;
+        position: absolute;
+    }
+  }
+  &-list{
+    &-wrap{
+      padding: 120px 0px;
+      @media #{$md,$sm,$xs} {
+        padding: 0px;
+        padding-bottom: 50px;
+      }
+    }
+    &-item{
+        padding-bottom: 21px;
+        padding-top: 21px;
+        border-bottom: 1px solid var(--tp-border-1);
+        position: relative;
+        cursor: pointer;
+        @media #{$xs} {
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+        & h4{
+          font-size: 32px;
+          text-transform: capitalize;
+          color: var(--tp-grey-2);
+          @include transition(all .5s ease);
+          margin-bottom: 0;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--tp-theme-primary);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-out 0s;
+        }
+        &:hover{
+          &::after{
+            opacity: 1;
+            visibility: visible;
+            width: 40px;
+            left: 0;
+            right: 0;
+          }
+          & .tp-project-five-title{
+            color: var(--tp-common-black);
+            margin-left: 50px;
+          }
+        }
+        &.active{
+          & .tp-project-five-title{
+            color: var(--tp-common-black);
+            margin-left: 50px;
+          }
+          &::after{
+            opacity: 1;
+            visibility: visible;
+            width: 40px;
+            left: 0;
+            right: 0;
+          }
+        }
+    }
+    &-content{
+      &-left{
+        & h4{
+          @media #{$xs} {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+  &-five{
+    &-shape{
+      top: 0;
+      right: 0;
+      width: 34%;
+    }
+  }
+}
+.m-mn{
+  margin-top: -1px;
+}
+#tp-project-thumb{
+  &.tp-project-list-thumb-1{
+    & .tp-project-list-thumb-1{
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+  &.tp-project-list-thumb-2{
+    & .tp-project-list-thumb-2{
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+  &.tp-project-list-thumb-3{
+    & .tp-project-list-thumb-3{
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+  &.tp-project-list-thumb-4{
+    & .tp-project-list-thumb-4{
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

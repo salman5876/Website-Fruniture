@@ -1,0 +1,103 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.14 Section Title
+/*----------------------------------------*/
+
+.#{$theme-prifix}-section{
+    &-title{
+        line-height: 1.15;
+        text-transform: uppercase;
+        @media #{$xs} {
+            & span{
+                margin-left: 0;
+            }
+        }
+        &-2{
+            font-size: 49px;
+            line-height: 1.20;
+            text-transform: capitalize;
+            @media #{$lg,$md,$xs,$sm} {
+                & br{
+                    display: none;
+                }
+            }
+            @media #{$lg,$md} {
+                font-size: 41px;
+            }
+            @media #{$sm} {
+                font-size: 40px;
+            }
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        }
+        &-badge{
+            font-family: var(--tp-ff-p);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: var(--tp-common-white);
+            background: var(--tp-theme-primary);
+            padding: 9px 12px;
+            display: inline-block;
+            border-radius: 20px;
+            transform: translateY(-13px);
+            margin-right: 20px;
+        }
+        @media #{$xl} {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        @media #{$lg,$md,$xs,$sm} {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+        @media #{$md,$sm} {
+            font-size: 40px;
+        }
+        @media #{$xs} {
+            font-size: 30px;
+        }
+        &-white{
+            color: var(--tp-common-white);
+        }
+        &-white2{
+            color: var(--tp-common-white);
+            text-transform: capitalize;
+        }
+    }
+    &-subtitle{
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: var(--tp-ff-common);
+        display: inline-block;
+        @media #{$sm,$xs} {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        &-orange{
+            color: var(--tp-theme-primary);
+        }
+    }
+    &-content{
+        & p{
+            @media #{$xl,$lg} {
+                font-size: 16px;
+            }
+            @media #{$md,$xs} {
+                font-size: 15px;
+            }
+            @media #{$xs} {
+                font-size: 14px;
+            }
+        }
+        &-gray{
+          color: #bcbcbc;
+        }
+        @media #{$xl,$lg,$md,$xs,$sm} {
+            margin: 0;
+        }
+    }
+}

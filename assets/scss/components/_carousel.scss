@@ -1,0 +1,13 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.6 Carousel
+/*----------------------------------------*/
+
+/* tp range slider css */
+.#{$theme-prifix}-range-slider{
+
+    & .inside-slider{
+        text-align: center;
+    }
+}

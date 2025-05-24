@@ -1,0 +1,71 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/* 7.2 award css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-awards{
+  &-subtitle{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.67;
+    text-transform: capitalize;
+    display: inline-block;
+  }
+  &-title{
+    font-size: 21px;
+    line-height: 1.50;
+    text-transform: capitalize;
+  }
+  &-meta{
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--tp-grey-1);
+  }
+  &-thumb{
+    margin-left: -200px;
+    margin-right: 70px;
+    @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &-item{
+    @media #{$sm,$xs} {
+      margin-bottom: 30px;
+    }
+  }
+  &-border{
+    border-bottom: 1px solid #e7d6c4;
+    &-2{
+      border-bottom: 1px solid #d9d9d9;
+    }
+    @media #{$sm,$xs} {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+    }
+  }
+  &-year{
+    font-size: 20px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: var(--tp-theme-primary);
+  }
+  &-btn{
+    @media #{$md,$sm,$xs} {
+      float: left;
+    }
+    &-2{
+      @media #{$sm,$xs} {
+        float: left;
+      }
+    }
+  }
+  &-para{
+    @media #{$x3l,$xxl,$xl,$lg,$md,$sm,$xs} {
+      & br{
+        display: none;
+      }
+    }
+  }
+}

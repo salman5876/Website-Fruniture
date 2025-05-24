@@ -1,0 +1,57 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5.2 Postbox css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-postbox{
+  &-comments{
+    display: flex;
+    @media #{$xs} {
+      flex-direction: column;
+      & img{
+        margin-bottom: 20px;
+      }
+    }
+    &-name{
+      font-size: 14px;
+    }
+    &-wrap{
+      & ul{
+        & li{
+          list-style: none;
+          &.active{
+            padding-left: 110px;
+            @media #{$lg,$md,$sm,$xs} {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-text{
+    margin-top: 4px;
+  }
+  &-date{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  &-link{
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    &:hover{
+      color: var(--tp-theme-primary);
+    }
+    & i{
+      margin-right: 4px;
+    }
+  }
+}
+.postbox-bm{
+  border-bottom: 1px solid#d9d9d9;
+}

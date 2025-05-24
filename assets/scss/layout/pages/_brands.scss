@@ -1,0 +1,49 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/* 7.4 brands css
+/*----------------------------------------*/
+
+.tp-brands{
+  $self: &;
+  &-title{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 133%;
+    text-align: center;
+  }
+  &-item{
+    &-two{
+      & svg{
+        color: #7B7974;
+        transition: all .4s ease;
+      }
+      &:hover{
+        & svg{
+          color: var(--tp-common-white);
+        }
+      }
+    }
+  }
+  &-slider{
+    & .swiper-slide.swiper-slide-active{
+      #{$self}{
+        &-item-two{
+          & svg{
+            color: var(--tp-common-white);
+          }
+        }
+      }
+    }
+  }
+  &-top{
+    &-spacing{
+      padding-top:610px;
+      @media #{$xl}{
+        padding-top: 450px;
+      }
+      @media #{$sm,$xs}{
+        padding-top: 80px;
+      }
+    }
+  }
+}

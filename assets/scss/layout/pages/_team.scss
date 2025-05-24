@@ -1,0 +1,211 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* 7.24 team css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-team{
+  &-title{
+    font-size: 21px;
+    line-height: 1.50;
+    @media #{$xs} {
+      font-size: 17px;
+    }
+    & a{
+      @include bgborder(#FF824D, 0,0);
+      @include transition(all .3s ease);
+      &:hover{
+          @include bgborder(#FF824D, 0,100%);
+          color: var(--tp-theme-primary);
+          @include transition(all .3s ease);
+      }
+    }
+  }
+  &-content{
+    & span{
+      line-height: 1.56;
+    }
+  }
+  &-social{
+    position: absolute;
+    bottom: 30px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    &-2{
+      position: absolute;
+      right: -30px;
+      bottom: -1px;
+      background: var(--tp-common-white);
+      display: inline-block;
+      padding: 12px 15px;
+      border-radius: 50px 0px 0px 50px;
+      @include transition(all .5s ease);
+      opacity: 0;
+      visibility: hidden;
+    }
+    & span{
+      width: 50px;
+      height: 56px;
+      display: inline-block;
+      font-size: 20px;
+      text-align: center;
+      line-height: 56px;
+      background: var(--tp-common-white);
+      border-radius: 0 50px 50px 0;
+      margin-right: 10px;
+      margin-left: -2px;
+      z-index: 1;
+      &:hover{
+        color: var(--tp-theme-primary);
+      }
+    }
+    &-link{
+      margin-left: -80px;
+      opacity: 0;
+      transition: all .4s ease;
+      &-2{
+        & a{
+          font-size: 20px;
+          color: var(--tp-gray-1);
+          margin: 0 5px;
+          &:hover{
+            color: var(--tp-theme-primary);
+          }
+        }
+      }
+      & a{
+        width: 49px;
+        height: 50px;
+        display: inline-block;
+        background: var(--tp-common-white);
+        text-align: center;
+        line-height: 50px;
+        color: var(--tp-gray-1);
+        font-size: 20px;
+        border-radius: 50%;
+        margin-right: 5px;
+        @media #{$xs} {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+        &:hover{
+          background: var(--tp-theme-primary);
+          color: var(--tp-common-white);
+        }
+      }
+
+    }
+  }
+  &-item{
+    &:hover{
+      & .tp-team-social-link{
+        margin-left: 0;
+        opacity: 1;
+      }
+      & .tp-team-social-2{
+        right: -1px;
+        opacity: 1;
+        visibility: visible;
+      }
+      & img{
+        transform: scale(1.2);
+      }
+    }
+    & img{
+      width: 100%;
+      transition: 0.7s;
+      transform: scale(1);
+      object-fit: cover;
+    }
+  }
+  &-ml{
+    margin-left: 300px;
+    @media #{$xxl,$xl,$lg,$md,$xs,$sm} {
+      margin-left: 30px;
+    }
+    @media #{$lg,$md,$xs,$sm} {
+      margin-right: 30px;
+    }
+    @media #{$xs,$sm} {
+      flex-direction: column;
+    }
+  }
+  &-progress{
+    &-thumb{
+      @media #{$xxl,$xl,$lg,$md,$xs,$sm} {
+        margin-right: 0;
+      }
+    }
+  }
+  &-pagenation{
+    @media #{$lg,$md} {
+      padding-left: 50px;
+    }
+    & div{
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      border: 1px solid #d9d9d9;
+      color: #525252;
+      text-align: center;
+      line-height: 60px;
+      font-size: 24px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      &:hover{
+        background-color: var(--tp-theme-primary);
+        color: var(--tp-common-white);
+        border-color:  var(--tp-theme-primary);
+      }
+    }
+  }
+  &-btn{
+    background: none;
+    border: 1.50px solid rgba(255, 255, 255, 1);
+    &:hover{
+      border-color: #FED497;
+    }
+  }
+  &-banner{
+    &-subtitle{
+      font-size: 14px;
+      line-height: 1.71;
+      text-transform: capitalize;
+      color: var(--tp-common-white);
+    }
+    &-title{
+      font-size: 60px;
+      line-height: 1.17;
+      text-transform: capitalize;
+      color: var(--tp-common-white);
+      @media #{$xxl,$xl,$lg,$md,$xs,$sm} {
+        font-size: 50px;
+      }
+      @media #{$xs} {
+        font-size: 40px;
+      }
+    }
+  }
+  &-slider{
+    &-active{
+      margin-left: -100px;
+    }
+  }
+  &-right{
+    &-thumb{
+      padding-top: 90px;
+      padding-left: 76px;
+      padding-bottom: 263px;
+      @media #{$xxl,$xl,$lg,$md} {
+        padding-left: 22px;
+        padding-bottom: 213px;
+      }
+      @media #{$xs,$sm} {
+        padding-left: 30px;
+        padding-bottom: 100px;
+      }
+    }
+  }
+}

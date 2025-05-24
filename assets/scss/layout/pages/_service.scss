@@ -1,0 +1,253 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* 7.20 service css
+/*----------------------------------------*/
+.#{$theme-prifix}-service{
+  $self: &;
+  &-wrapper{
+    &:hover{
+      & .tp-service-icon{
+        color: var(--tp-theme-primary);
+      }
+      & .tp-service-link{
+        color: var(--tp-theme-primary);
+      }
+    }
+  }
+  &-2{
+    &-title{
+      &-wrapper{
+        & h2{
+          font-size: 50px;
+          text-transform: capitalize;
+          @media #{$md} {
+            font-size: 45px;
+          }
+          @media #{$sm,$xs} {
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+  &-title{
+    font-size: 24px;
+    line-height: 1.42;
+    & a{
+      @include bgborder(#FF824D, 0,0);
+      @include transition(all .3s ease);
+      &:hover{
+          @include bgborder(#FF824D, 0,100%);
+          color: var(--tp-theme-primary);
+          @include transition(all .3s ease);
+      }
+    }
+  }
+  &-link{
+    color: #BCBCBC;
+  }
+  &-icon{
+    color: var(--tp-common-black);
+    @include transition(all .3s ease);
+  }
+  &-details{
+    &-title{
+      font-size: 30px;
+      line-height: 1.3;
+    }
+    &-faq{
+      &-para{
+        padding: 0;
+        margin-top: 20px;
+        & p{
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-accordion{
+      & .accordion {
+        --bs-accordion-border-width: 0;
+        --bs-accordion-btn-icon: none;
+        --bs-accordion-btn-active-icon: none;
+      }
+    }
+  }
+  &-faq{
+    &-btn{
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--tp-common-black);
+      transition: all .4s ease;
+      z-index: 1;
+      &:not(.collapsed) .accordion-btn{
+        background: var(--tp-theme-primary);
+        z-index: -1;
+      }
+      &:not(.collapsed) .accordion-btn::before{
+        transform: translateX(-50%) rotate(90deg);
+        background: var(--tp-common-white);
+      }
+      &:not(.collapsed) .accordion-btn::after {
+        background: var(--tp-common-white);
+      }
+      & .accordion-btn {
+        position: absolute;
+        top: 50%;
+        right: -63px;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: #f3f3f3;
+        &:not(.collapsed)::after {
+          @include transform(rotate(0deg));
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 18px;
+          left: 50%;
+          top: 14px;
+          background-color: var(--tp-common-black);
+          opacity: 0.5;
+          transform: translateX(-50%);
+          border-radius: 2px;
+          transition: all 0.4s ease;
+          z-index: 2;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          width: 18px;
+          height: 2px;
+          left: 16px;
+          top: 43%;
+          transform: translateY(-50%);
+          background-color: var(--tp-common-black);
+          opacity: 0.5;
+          border-radius: 2px;
+          transition: all 0.4s ease;
+          z-index: 2;
+        }
+      }
+      &:focus{
+        box-shadow: none;
+        border: none;
+      }
+      &.accordion-button:not(.collapsed) {
+        color: var(--tp-common-black);
+        background: none;
+        box-shadow: none;
+      }
+      &:last-of-type .accordion-button.collapsed {
+        border-radius: inherit!important;
+      }
+    }
+    &-list{
+      border: 1px solid #d9d9d9;
+      width: 100%;
+      border-radius: inherit!important;
+      padding: 18px 70px 18px 25px;
+      &:not(:first-of-type) {
+        border-top: 1px solid #d9d9d9;
+      }
+    }
+  }
+  &-five{
+    &-transparent{
+      margin-top: -134px;
+      @media #{$lg,$md} {
+        margin-top: -80px;
+      }
+      @media #{$sm,$xs} {
+        margin-top: -30px;
+      }
+    }
+    &-item{
+      box-shadow: 0 2px 60px 0 rgba(27, 16, 57, 0.06);
+      background: var(--tp-common-white);
+      padding: 50px 50px 60px 50px;
+      @include transition(all .4s ease);
+      @media #{$lg,$xs} {
+        padding: 25px;
+      }
+      &:hover{
+        background: var(--tp-common-black);
+        #{$self}{
+          &-five{
+            &-title{
+              color: var(--tp-common-white);
+            }
+            &-icon{
+              & span{
+                background: var(--tp-common-white);
+                color: var(--tp-common-black);
+              }
+            }
+            &-btn{
+              & a{
+                color: var(--tp-common-white);
+              }
+            }
+            &-content{
+              & p{
+                color: var(--tp-grey-2);
+              }
+            }
+          }
+        }
+      }
+      &-active{
+        background: var(--tp-common-black);
+        #{$self}{
+          &-five{
+            &-title{
+              color: var(--tp-common-white);
+            }
+            &-icon{
+              & span{
+                background: var(--tp-common-white);
+                color: var(--tp-common-black);
+              }
+            }
+            &-btn{
+              & a{
+                color: var(--tp-common-white);
+              }
+            }
+            &-content{
+              & p{
+                color: var(--tp-grey-2);
+              }
+            }
+          }
+        }
+      }
+    }
+    &-title{
+      line-height: 1.4;
+      @include transition(all .4s ease);
+    }
+    &-link{
+      align-items: end;
+    }
+    &-icon{
+      & span{
+        width: 80px;
+        height: 80px;
+        background-color: var(--tp-common-black);
+        display: inline-block;
+        text-align: center;
+        line-height: 80px;
+        color: var(--tp-common-white);
+        @include transition(all .4s ease);
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 contact css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-contact{
+  &-content{
+    & h4{
+      font-size: 18px;
+      text-transform: capitalize;
+    }
+    & a{
+      font-size: 18px;
+      line-height: 1.5;
+      display: block;
+      margin-bottom: 10px;
+      &:hover{
+        color: var(--tp-theme-primary);
+      }
+    }
+  }
+  &-map{
+    &-box{
+      line-height: 0;
+      & iframe {
+        height: 650px;
+        width: 100%;
+        filter: saturate(0);
+        @media #{$sm,$xs} {
+          height: 450px;
+        }
+      }
+    }
+  }
+}
+
+.tp-contact-lucation{
+  border: 1px solid #d9d9d9;
+  padding-bottom: 30px;
+  margin: 0px -1px 0 0px;
+  @media #{$lg,$sm,$xs} {
+    border: none;
+  }
+}
+
+.tp-contact-wrap{
+  & .row{
+      [class*="col-"]{
+          &:nth-child(2n+1){
+            & .tp-contact-lucation{
+              padding-right: 50px;
+              border-left: 1px solid transparent;
+              border-top: 1px solid transparent;
+              @media #{$lg} {
+                padding-right: 15px;
+              }
+              @media #{$sm,$xs} {
+                padding-right: 0;
+              }
+            }
+         }
+          &:nth-child(2n){
+            & .tp-contact-lucation{
+              padding-left: 50px;
+              border-right: 1px solid transparent;
+              border-top: 1px solid transparent;
+              @media #{$lg} {
+                padding-left: 15px;
+                padding-top: 0;
+              }
+              @media #{$sm,$xs} {
+                padding-left: 0;
+              }
+            }
+         }
+         &:nth-child(3){
+          & .tp-contact-lucation{
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+            @media #{$lg,$sm,$xs} {
+              padding-top: 0;
+            }
+          }
+          & .not-space {
+            margin-bottom: 0;
+          }
+       }
+        &:last-child{
+          & .tp-contact-lucation{
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+          }
+          & .not-space {
+            margin-bottom: 0;
+          }
+        }
+      }
+  }
+}

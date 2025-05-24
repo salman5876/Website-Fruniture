@@ -1,0 +1,39 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.12 help css
+/*----------------------------------------*/
+.#{$theme-prifix}-help{
+  &-title{
+    font-size: 26px;
+    line-height: 1.38;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    &-wrap{
+      @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+        margin-right: 0;
+      }
+    }
+  }
+  &-content{
+    @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+      margin: 0;
+    }
+  }
+  &-weight{
+    font-size: 40px;
+    color: var(--tp-theme-primary);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

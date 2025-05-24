@@ -1,0 +1,135 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.18 feature css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-feature{
+  $self: &;
+  &-title{
+    font-size: 20px;
+    line-height: 1.50;
+    & a{
+      @include bgborder(#FF824D, 0,0);
+      @include transition(all .3s ease);
+      &:hover{
+          @include bgborder(#FF824D, 0,100%);
+          color: var(--tp-theme-primary);
+          @include transition(all .3s ease);
+      }
+    }
+    &-4{
+      & h6{
+        font-size: 24px;
+        line-height: 1.4;
+        @include transition(all .4s ease);
+      }
+    }
+    &-wrapper{
+      @media #{$xl} {
+        & .tp-section-title-2 {
+          font-size: 45px;
+        }
+      }
+    }
+  }
+  &-item{
+    &-4{
+      border-top: 1px solid #d9d9d9;
+      padding-top: 30px;
+      &:hover{
+        & h6{
+          color: var(--tp-theme-primary);
+        }
+      }
+      & p{
+        font-size: 18px;
+        margin-right: 30px;
+      }
+    }
+  }
+  &-icon{
+    position: relative;
+    z-index: 1;
+    & span{
+      width: 60px;
+      height: 75px;
+      display: inline-block;
+    }
+    &::before,
+    &::after{
+      position: absolute;
+      content: "";
+      width: 28px;
+      height: 65px;
+      background: #f3f3f3;
+      top: 0;
+      left: -10px;
+      z-index: -1;
+      @extend %tp-transition;
+    }
+    &:after{
+      background: var(--tp-theme-primary);
+      opacity: 0;
+      width: 0;
+    }
+  }
+  &-box{
+    padding: 50px 40px;
+    @media #{$lg,$md,$xs,$sm} {
+      padding: 40px 25px;
+    }
+    &-border{
+      border: 1px solid #d9d9d9;
+      margin-top: -1px;
+      margin-right: -1px;
+    }
+    &:hover{
+      #{$self}{
+        &-icon{
+          &::after{
+            opacity: 1;
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
+  &-number{
+    background: var(--tp-theme-primary);
+    padding: 103px;
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    margin-right: 100px;
+    @media #{$md,$sm,$xs} {
+      margin-right: 0;
+      float: left;
+      margin-bottom: 40px;
+    }
+    @media #{$sm,$xs} {
+      padding: 60px;
+    }
+    & h3{
+      font-size: 180px;
+      line-height: 1;
+      font-family: var(--tp-ff-p);
+      text-transform: capitalize;
+      color: var(--tp-common-white);
+      position: absolute;
+      bottom: -32px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      @media #{$sm,$xs} {
+        font-size: 100px;
+      }
+    }
+  }
+}
+.feature-md-spacing{
+  @media #{$md,$xs,$sm} {
+    padding: 40px 0;
+    margin-left: 0;
+  }
+}

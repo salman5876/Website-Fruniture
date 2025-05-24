@@ -1,0 +1,191 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.14 portfolio css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-portfolio{
+  &-content{
+    @media #{$xl,$lg,$md,$sm,$xs} {
+      margin-left: 0;
+    }
+    @media #{$lg,$md,$sm,$xs} {
+      margin-top: 0;
+    }
+    & span{
+      display: inline-block;
+    }
+  }
+  &-wrapper{
+    &-2{
+      & img{
+        transition: 0.9s;
+      }
+      &:hover{
+        & img{
+            @include transform( scale(1.1) rotate(-2deg))
+        }
+      }
+    }
+  }
+  &-title{
+    font-size: 30px;
+    line-height: 1.33;
+    @media #{$xl} {
+      font-size: 27px;
+    }
+    @media #{$sm,$xs} {
+      font-size: 24px;
+    }
+    & a{
+      @include bgborder(#FF824D, 0,0);
+      @include transition(all .3s ease);
+      &:hover{
+          @include bgborder(#FF824D, 0,100%);
+          color: var(--tp-theme-primary);
+          @include transition(all .3s ease);
+      }
+    }
+  }
+  &-btn{
+    &-title{
+      font-size: 21px;
+      line-height: 150%;
+      text-transform: capitalize;;
+    }
+  }
+  &-filter{
+    &-btn{
+      text-align: center;
+      & button{
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1.6;
+        text-transform: uppercase;
+        color: var(--tp-grey-1);
+        padding: 15px 20px;
+        transition: all .3s ease;
+        &.active{
+          color: var(--tp-theme-primary);
+          text-decoration: underline;
+        }
+        &:hover{
+          color: var(--tp-theme-primary);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &-video{
+    &-thumb{
+      text-align: center;
+    }
+    &-content{
+      & h6{
+        font-size: 14px;
+        line-height: 1.7;
+        text-transform: uppercase;
+        color: var(--tp-common-white);
+      }
+    }
+    &-title{
+      font-size: 50px;
+      line-height: 1.2;
+      color: var(--tp-common-white);
+      @media #{$xs} {
+        font-size: 35px;
+        & br{
+          display: none;
+        }
+      }
+    }
+    &-area{
+      padding-top: 225px;
+      padding-bottom: 215px;
+      @media #{$xs} {
+        padding-top: 150px;
+        padding-bottom: 150px;
+      }
+    }
+  }
+  &-play{
+    display: inline-block;
+    span:nth-child(1) {
+      animation-delay: 100ms;
+    }
+    & .play-btn svg {
+      width: 100px;
+      height: 100px;
+      background: var(--tp-common-white);
+      border-radius: 50%;
+      & .tp-stroke-solid {
+        stroke-dashoffset: 300;
+        stroke-dasharray: 150;
+        stroke-width: 14px;
+        transition: stroke-dashoffset 1s ease, opacity 1s ease;
+        color: var(--tp-theme-primary);
+      }
+      & .tp-stroke {
+        opacity: 0;
+      }
+      & .tp-stroke-icon {
+        transform: translate(-9px, -13px);
+        color: #1C1D21;
+      }
+    }
+    &:hover{
+      & .tp-stroke-solid {
+        stroke-dashoffset: 0!important;
+        stroke-dasharray: 300;
+      }
+    }
+  }
+  &-details{
+    &-info{
+      & ul{
+        display: flex;
+        border: 1px solid #d9d9d9;
+        padding: 24px 30px 10px 30px;
+        flex-wrap: wrap;
+        & li{
+          list-style: none;
+          flex: 0 0 auto;
+          position: relative;
+          &:not(:last-child){
+            margin-right: 20px;
+            padding-right: 20px;
+            &::before{
+              position: absolute;
+              content: "";
+              width: 1px;
+              height: 45px;
+              background: #c7c4be;
+              right: 0;
+              top: 5px;
+            }
+          }
+          &::before{
+            @media #{$xs} {
+              display: none;
+            }
+          }
+          & span{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.5;
+            text-transform: uppercase;
+            color: var(--tp-grey-1);
+            margin-bottom: 5px;
+            display: inline-block;
+          }
+          & h4{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

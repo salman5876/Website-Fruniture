@@ -1,0 +1,105 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.23 subscribe css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-subscribe{
+  &-area{
+    background: #f7f7f7;
+    padding-top: 85px;
+    padding-bottom: 40px;
+  }
+  &-title{
+    & h3{
+      font-size: 30px;
+      line-height: 1.33;
+    }
+  }
+  &-btn{
+    top: 50%;
+    right: 0;
+    color: var(--tp-grey-1);
+    @include transform(translateY(-50%));
+    & .tp-arrow-angle svg {
+      width: 13px;
+      height: 13px;
+    }
+    &:hover{
+      color: var(--tp-theme-primary);
+    }
+  }
+  &-input{
+    & input{
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--tp-grey-1);
+      border: none;
+      background: no-repeat;
+      border-bottom: 1px solid var(--tp-common-black);
+      padding: 0;
+      height: 50px;
+      padding-right: 30px;
+      &:focus{
+        border-bottom: 1px solid var(--tp-theme-primary);
+      }
+      @include tp-placeholder(){
+        font-weight: 500;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--tp-grey-1);
+      }
+    }
+  }
+  &-checkbox{
+    & input{
+      margin-right: 5px;
+      display: none;
+      &:checked ~ label::before {
+        visibility: visible;
+        opacity: 1;
+      }
+      &:checked ~ label::after {
+          background-color:  var(--tp-theme-primary);
+          border-color:  var(--tp-theme-primary);
+      }
+    }
+    & label{
+      font-size: 15px;
+      line-height: 1.6;
+      position: relative;
+      color: var(--tp-grey-1);
+      padding-left: 22px;
+      cursor: pointer;
+      &:before{
+        position: absolute;
+        content: url(../../assets/img/login/check.svg);
+        top: 4px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: center;
+        visibility: hidden;
+        opacity: 1;
+        color: var(--tp-common-white);
+        @include transition(all 0.2s ease-out 0s);
+        z-index: 1;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        top: 4px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        text-align: center;
+        border: 1px solid #525252;
+        @include transition(all 0.2s ease-out 0s);
+        border-radius: 2px;
+      }
+    }
+  }
+}

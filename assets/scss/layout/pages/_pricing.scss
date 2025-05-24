@@ -1,0 +1,73 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.15 pricing css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-pricing{
+  &-icon{
+    width: 100px;
+    height: 100px;
+    background: var(--tp-common-black);
+    display: inline-block;
+    line-height: 100px;
+    color: var(--tp-theme-primary);
+    border-radius: 50%;
+    &-main{
+      background: var(--tp-theme-primary);
+      color: var(--tp-common-white);
+    }
+  }
+  &-price{
+    & h6{
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--tp-grey-1);
+    }
+    & h2{
+      font-size: 50px;
+      line-height: 1.2;
+      color: var(--tp-common-black);
+    }
+  }
+  &-wrap{
+    padding: 60px 40px 60px 40px;
+    border: 1px solid#E4D7C9;
+  }
+  &-feature{
+    & ul{
+      & li{
+        list-style: none;
+        font-size: 18px;
+        line-height: 1.5;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        &:not(:last-child){
+          margin-bottom: 17px;
+        }
+        & i{
+          font-size: 16px;
+          color: var(--tp-grey-1);
+          line-height: 26px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &-contact{
+    &-title{
+      @media #{$sm,$xs} {
+        font-size: 35px;
+      }
+    }
+  }
+  &-banner{
+    &-area{
+      padding-bottom: 280px;
+    }
+  }
+}
+
+
+
